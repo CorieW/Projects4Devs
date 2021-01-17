@@ -1,0 +1,70 @@
+.add-project-form {
+    width: 80%;
+    margin: 0 10%;
+}
+
+.project-name-input, .project-sdesc-input, .project-desc-input, .project-categories-input {
+    width: 100%;
+    padding-left: 10px;
+    background-color: transparent;
+    border: none;
+    border-left: 3px solid gray;
+    outline: none;
+    box-sizing: border-box;
+
+    color: whitesmoke;
+}
+
+.project-name-input:focus, .project-sdesc-input:focus, .project-desc-input:focus, .project-categories-input:focus {
+    border-left: 3px solid lime;
+}
+
+.project-name-input {
+    border-top: 3px solid lime;
+
+    font-size: 40px;
+}
+
+.project-sdesc-input {
+    margin-top: 25px;
+    
+    font-size: 30px;
+}
+
+.project-desc-input {
+    min-height: 200px;
+    margin-top: 25px;
+    resize: vertical;
+
+    font-size: 25px;
+}
+
+.project-categories-input {
+    margin-top: 25px;
+
+    font-size: 30px;
+}
+
+.whitespace {
+    width: 100%;
+    height: 3px;
+    margin-top: 25px;
+    border-left: 3px solid gray;
+}
+
+.add-project-form .submit {
+    width: 100%;
+    height: 50px;
+    margin-top: 25px;
+    background-color: transparent;
+    border: 3px solid gray;
+    outline: none;
+
+    font-size: 25px;
+    color: gray;
+}
+
+.add-project-form .submit:hover {
+    border: 3px solid lime;
+    color: lime;
+}

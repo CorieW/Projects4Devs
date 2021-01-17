@@ -1,0 +1,77 @@
+.nav {
+    position: relative;
+    height: 35px;
+    width: 80%;
+    margin: 10px 10% 20px;
+    box-sizing: content-box;
+}
+
+.site-title {
+    display: inline-block;
+    margin: 0;
+    line-height: 35px;
+
+    font-size: 35px;
+    font-weight: bold;
+    color: white;
+}
+
+.buttons {
+    position: absolute;
+    display: flex;
+    top: 0;
+    right: 0;
+    vertical-align: bottom;
+    height: 35px;
+}
+
+.search-input, .search-btn, .add-project-link {
+    min-width: 35px;
+    height: 35px;
+    padding: 5px;
+    margin: 0;
+    background-color: rgb(35, 35, 35);
+    border: none;
+    border-radius: 0;
+    outline: none;
+    vertical-align: bottom;
+
+    color: whitesmoke;
+}
+
+.search-input {
+    width: 300px;
+    flex: 1;
+    box-sizing: border-box;
+
+    font-size: 18px;
+}
+
+.search-btn {
+    flex: 1;
+    min-width: 35px;
+    max-width: 35px;
+    border-left: 2px solid rgb(15, 15, 15);
+
+    font-size: 13px;
+}
+
+.search-btn:hover {
+    font-size: 18px;
+}
+
+.add-project-link {
+    padding: 0;
+    margin: 0 0 0 10px;
+    background-color: lime;
+    
+    color: rgb(15, 15, 15);
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 35px;
+    text-align: center;
+}
+
+.add-project-link:hover {
+    font-size: 18px;
+}
