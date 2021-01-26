@@ -1,4 +1,10 @@
 body {
-  margin: 0;
+  margin: auto 0;
   background-color: rgb(15, 15, 15);
+}
+
+#content {
+  width: 80%;
+  min-height: calc(100vh - 100px);
+  margin: auto;
 }

@@ -19,3 +19,62 @@ button, input, textarea {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+a {
+  color: gold;
+}
+
+.disabled {
+  color: gray;
+}
+
+.hidden {
+  display: none;
+}
+
+h1 {
+  color: white;
+}
+
+h2, h3, h4, h5, h6, p, li {
+  color: whitesmoke;
+}
+
+.container-1 {
+  width: 70%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.important-container {
+  position: absolute;
+  left: 0;
+  top: 35%;
+  width: 100%;
+
+  text-align: center;
+}
+
+.important-text {
+  width: 50%;
+  margin: auto auto 50px;
+
+  font-size: 40px;
+  color: white;
+}
+
+.page-header {
+  font-size: 40px;
+}
+
+.info {
+  font-size: 18px;
+}
+
+.big-info {
+  font-size: 25px;
+}
+
+.huge-info {
+  font-size: 30px;
+}

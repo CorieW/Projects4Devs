@@ -1,9 +1,4 @@
-.add-project-form {
-    width: 80%;
-    margin: 0 10%;
-}
-
-.project-name-input, .project-sdesc-input, .project-desc-input, .project-categories-input {
+.project-name-input, .project-short-desc-input, .project-desc-input, .project-tags-input, .project-difficulty-dropdown {
     width: 100%;
     padding-left: 10px;
     background-color: transparent;
@@ -15,7 +10,7 @@
     color: whitesmoke;
 }
 
-.project-name-input:focus, .project-sdesc-input:focus, .project-desc-input:focus, .project-categories-input:focus {
+.project-name-input:focus, .project-short-desc-input:focus, .project-desc-input:focus, .project-tags-input:focus, .project-difficulty-dropdown:focus {
     border-left: 3px solid lime;
 }
 
@@ -25,7 +20,7 @@
     font-size: 40px;
 }
 
-.project-sdesc-input {
+.project-short-desc-input {
     margin-top: 25px;
     
     font-size: 30px;
@@ -39,7 +34,13 @@
     font-size: 25px;
 }
 
-.project-categories-input {
+.project-tags-input {
+    margin-top: 25px;
+
+    font-size: 30px;
+}
+
+.project-difficulty-dropdown {
     margin-top: 25px;
 
     font-size: 30px;
@@ -52,10 +53,10 @@
     border-left: 3px solid gray;
 }
 
-.add-project-form .submit {
+#add-project-form .submit {
     width: 100%;
     height: 50px;
-    margin-top: 25px;
+    margin: 25px 0 15px;
     background-color: transparent;
     border: 3px solid gray;
     outline: none;
@@ -64,7 +65,19 @@
     color: gray;
 }
 
-.add-project-form .submit:hover {
+#add-project-form .submit:hover {
     border: 3px solid lime;
     color: lime;
+}
+
+.error-msg {
+    width: 50%;
+    padding: 5px;
+    margin: auto;
+    margin-bottom: 15px;
+    border: 2px solid red;
+
+    color: red;
+    font-size: 20px;
+    text-align: center;
 }

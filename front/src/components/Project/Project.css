@@ -1,0 +1,63 @@
+.project-container .project-name {
+    margin: 0;
+
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.project-container .project-short-desc {
+    margin: 0;
+
+    text-align: center;
+    color: gray;
+    font-size: 25px;
+}
+
+.project-container .project-desc {
+    font-size: 25px;
+    white-space: pre-wrap;
+}
+
+.project-container .project-difficulty {
+    font-size: 25px;
+}
+
+.project-container .project-tags {
+    padding: 0;
+
+    text-align: left;
+}
+
+.project-container .project-tags li {
+    display: inline-block;
+    padding: 0 10px 0 0;
+
+    font-size: 20px;
+}
+
+.project-container .project-tags li a {
+    text-decoration: none;
+}
+
+/* Difficulty Levels */
+.project-container .easy {
+    font-weight: bold;
+    color: limegreen;
+}
+
+.project-container .moderate {
+    font-weight: bold;
+    color: gold;
+}
+
+.project-container .hard {
+    font-weight: bold;
+    color: red;
+}
+
+.project-container .extremely-hard {
+    font-weight: bold;
+    color: palevioletred;
+}

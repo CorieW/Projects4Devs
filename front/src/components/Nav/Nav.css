@@ -1,8 +1,8 @@
-.nav {
+#nav {
     position: relative;
-    height: 35px;
     width: 80%;
-    margin: 10px 10% 20px;
+    height: 35px;
+    margin: 10px auto 25px;
     box-sizing: content-box;
 }
 
@@ -14,6 +14,12 @@
     font-size: 35px;
     font-weight: bold;
     color: white;
+    text-decoration: none;
+}
+
+.site-title a {
+    color: inherit;
+    text-decoration: inherit;
 }
 
 .buttons {
@@ -63,7 +69,7 @@
 .add-project-link {
     padding: 0;
     margin: 0 0 0 10px;
-    background-color: lime;
+    background-color: limegreen;
     
     color: rgb(15, 15, 15);
     font-size: 13px;

@@ -1,0 +1,13 @@
+.guidelines-container hr {
+    border: 1px solid gray;
+}
+
+.guidelines-container .important {
+    text-align: center;
+}
+
+.guidelines-container .important-text {
+    text-align: center;
+    font-weight: bold;
+    margin: 15px 0 0;
+}

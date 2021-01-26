@@ -1,0 +1,25 @@
+.progress-text a {
+    font-size: 35px;
+}
+
+.track-project-container .icon {
+    padding-left: 10px;
+
+    font-size: 50px;
+}
+
+.pending {
+    color: aqua;
+}
+
+.reviewing {
+    color: gold;
+}
+
+.declined {
+    color: red;
+}
+
+.accepted {
+    color: limegreen;
+}
