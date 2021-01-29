@@ -5,6 +5,7 @@ import $ from 'jquery'
 
 export default function AddProject() 
 {
+    const [tags, setTags] = useState([])
     const [errorMsg, setErrorMsg] = useState('')
 
     function submit(e)
@@ -12,23 +13,22 @@ export default function AddProject()
         e.preventDefault()
 
         const data = {
-            'projectName': $('.project-name-input')[0].value,
-            'shortDesc': $('.project-short-desc-input')[0].value,
-            'desc': $('.project-desc-input')[0].value,
-            'difficulty': $('.project-difficulty-dropdown')[0].value,
+            'projectName': $('.project-name-input')[0].value.trim(),
+            'shortDesc': $('.project-short-desc-input')[0].value.trim(),
+            'desc': $('.project-desc-input')[0].value.trim(),
+            'difficulty': $('.project-difficulty-dropdown')[0].value.trim(),
+            'tags': tags
         }
-        const tags = $('.project-tags-input')[0].value
-        data['tags'] = tags.length > 0 ? tags.split(',') : []
 
         axios({
             method: 'POST',
             url: 'http://localhost:3001/api/add',
             data: data,
         }).then((response) => {
-            window.location.replace('/track?id=' + response['data']['projectID'])
+            window.location.replace('/track?id=' + response.data.projectID)
         }, (error) => {
             if (error.response !== undefined)
-                setErrorMsg(error.response['data']['message'])
+                setErrorMsg(error.response.data.message)
             else if (error.message === 'Network Error')
                 setErrorMsg('Our servers are currently busy or down, please try again later!')
             else
@@ -38,17 +38,51 @@ export default function AddProject()
         return false;
     }
 
+    function addTag(e)
+    {
+        e.preventDefault()
+
+        const tagInput = $('.project-tag-input')[0]
+        const tagValue = tagInput.value.trim()
+
+        // Tag must have a value to be entered as a tag.
+        if (tagValue.length === 0) return
+
+        setTags([...tags, tagValue])
+        tagInput.value = ''
+    }
+
+    function removeTag(e, index)
+    {
+        e.preventDefault()
+
+        const newTags = tags
+        newTags.splice(index, 1)
+        setTags([...newTags])
+    }
+
     return (
-        <div>
+        <div className='container-1 add-project-container'>
             <p className='info'>See the <a href='/guidelines'>project guidelines page</a> for information on what you can and can't involve in project idea submissions.</p>
-            <form onSubmit={submit} id='add-project-form'>
+            <form onSubmit={ submit } id='add-project-form'>
                 <input type='text' placeholder='Enter project name...' className='project-name-input'></input>
                 <div className='whitespace'></div>
                 <input type='text' placeholder='Enter short description...' className='project-short-desc-input'></input>
                 <div className='whitespace'></div>
                 <textarea placeholder='Enter description...' className='project-desc-input'></textarea>
                 <div className='whitespace'></div>
-                <input type='text' placeholder='Enter tags...' className='project-tags-input'></input>
+                <div className='add-tag-container'>
+                    <input type='text' placeholder='Enter tag...' className='project-tag-input'/>
+                    <button onClick={ addTag } className='add-tag-btn'><i className="fas fa-plus"></i></button>
+                    <ul className='project-tags'>
+                        { tags.map((tag, index) => {
+                            return <button key={ index } onClick={ (e) => removeTag(e, index) } className='tag'>
+                                { tag } 
+                                <i class="fas fa-times remove-tag-icon"></i>
+                            </button>
+                        }) }
+                    </ul>
+                </div>
                 <div className='whitespace'></div>
                 <select className='project-difficulty-dropdown'>
                     <option value='' selected disabled>Select difficulty...</option>

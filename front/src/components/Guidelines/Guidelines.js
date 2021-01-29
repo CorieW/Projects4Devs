@@ -10,7 +10,7 @@ export default function Guidelines()
                 <p className='big-info'>By following the below guidelines your project ideas should have no problem getting approved!</p>
             </div>
             <hr/>
-            <p className='huge-info important-text'>Rules</p>
+            <p className='section-header'>Rules</p>
             <ol>
                 <li className='big-info'>No duplicate ideas. I try my best to keep the ideas unique, so scrolling to find new ideas
                 is as easy as possible.</li>
@@ -20,7 +20,7 @@ export default function Guidelines()
                 <li className='big-info'>Any ideas that contain language that may offend will not be approved.</li>
             </ol>
             <hr/>
-            <p className='huge-info important-text'>Preferences</p>
+            <p className='section-header'>Preferences</p>
             <ol>
                 <li className='big-info'>Try to make your idea as easy as possible to understand.</li>
                 <li className='big-info'>Try to avoid complex language and slang.</li>

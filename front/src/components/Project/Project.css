@@ -40,24 +40,3 @@
 .project-container .project-tags li a {
     text-decoration: none;
 }
-
-/* Difficulty Levels */
-.project-container .easy {
-    font-weight: bold;
-    color: limegreen;
-}
-
-.project-container .moderate {
-    font-weight: bold;
-    color: gold;
-}
-
-.project-container .hard {
-    font-weight: bold;
-    color: red;
-}
-
-.project-container .extremely-hard {
-    font-weight: bold;
-    color: palevioletred;
-}

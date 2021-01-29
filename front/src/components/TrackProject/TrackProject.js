@@ -61,12 +61,12 @@ export default function TrackProject()
     useEffect(() =>
     {
         // Makes an API call to the backend, asking for the data of the project with the given project ID.
-        axios.get(`http://localhost:3001/api/project/${window.location.search}`)
+        axios.get(`http://localhost:3001/api/track${window.location.search}`)
             .then((response) => {
-                setProgressStatus(response['data']['data']['progress'])
+                setProgressStatus(response.data.data.progress)
             }, (error) => {
                 if (error.response !== undefined)
-                    setErrorMsg(error.response['data']['message'])
+                    setErrorMsg(error.response.data.message)
                 else if (error.message === 'Network Error')
                     setErrorMsg('Our servers are currently busy or down, please try again later!')
                 else

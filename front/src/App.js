@@ -1,5 +1,6 @@
-import './App.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import './App.css'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { useState } from 'react'
 import Nav from './components/Nav/Nav'
 import Footer from './components/Footer/Footer'
 import Showcase from './components/Showcase/Showcase'
@@ -8,8 +9,11 @@ import TrackProject from './components/TrackProject/TrackProject'
 import Guidelines from './components/Guidelines/Guidelines'
 import SearchProjects from './components/SearchProjects/SearchProjects'
 import Page404 from './components/Page404/Page404'
+import Project from './components/Project/Project'
 
 function App() {
+  const [project, setProject] = useState(undefined)
+
   return (
     <div className='App'>
       <Nav />
@@ -17,6 +21,7 @@ function App() {
         <Router>
           <Switch>
             <Route exact path='/' component={Showcase} />
+            <Route path='/project' component={Project} />
             <Route path='/add' component={AddProject} />
             <Route path='/track' component={TrackProject} />
             <Route path='/guidelines' component={Guidelines} />

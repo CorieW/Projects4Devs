@@ -1,133 +1,59 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
 import './SearchProjects.css'
+import axios from 'axios'
+import ProjectListing from './ProjectListing/ProjectListing'
 
 export default function SearchProjects()
 {
-    return (
-        <div className='search-projects-container container-1'>
-            <p className='page-header'><b>Projects</b></p>
-            <div className='project-listings-container'>
-                <button className='project-listing-btn'>
-                    <div className='project-listing-container'>
-                        <p className='project-name'>Project naem</p>
-                        <p className='project-short-desc'>This is just a short description of the project.</p>
-                        <p className='project-difficulty'>Difficulty: <span className=''>Hard</span></p>
-                        <div className='project-tags-scroller-container'>
-                            <button className='previous-tag-btn'><i class="fas fa-angle-left"></i></button>
-                            <div className='project-tags-container'>
-                                <ul className='project-tags'>
-                                    <li>Web development</li>
-                                    <li>Game development</li>
-                                    <li>C#</li>
-                                    <li>Business</li>
-                                    <li>Web scraping</li>
-                                </ul>
-                            </div>
-                            <button className='next-tag-btn'><i class="fas fa-angle-right"></i></button>
-                        </div>
-                    </div>
-                </button>
-                <button className='project-listing-btn'>
-                    <div className='project-listing-container'>
-                        <p className='project-name'>Project naem</p>
-                        <p className='project-short-desc'>This is just a short description of the project.</p>
-                        <p className='project-difficulty'>Difficulty: <span className=''>Hard</span></p>
-                        <div className='project-tags-scroller-container'>
-                            <button className='previous-tag-btn'><i class="fas fa-angle-left"></i></button>
-                            <div className='project-tags-container'>
-                                <ul className='project-tags'>
-                                    <li>Web development</li>
-                                    <li>Game development</li>
-                                    <li>C#</li>
-                                    <li>Business</li>
-                                    <li>Web scraping</li>
-                                </ul>
-                            </div>
-                            <button className='next-tag-btn'><i class="fas fa-angle-right"></i></button>
-                        </div>
-                    </div>
-                </button>
-                <button className='project-listing-btn'>
-                    <div className='project-listing-container'>
-                        <p className='project-name'>Project naem</p>
-                        <p className='project-short-desc'>This is just a short description of the project.</p>
-                        <p className='project-difficulty'>Difficulty: <span className=''>Hard</span></p>
-                        <div className='project-tags-scroller-container'>
-                            <button className='previous-tag-btn'><i class="fas fa-angle-left"></i></button>
-                            <div className='project-tags-container'>
-                                <ul className='project-tags'>
-                                    <li>Web development</li>
-                                    <li>Game development</li>
-                                    <li>C#</li>
-                                    <li>Business</li>
-                                    <li>Web scraping</li>
-                                </ul>
-                            </div>
-                            <button className='next-tag-btn'><i class="fas fa-angle-right"></i></button>
-                        </div>
-                    </div>
-                </button>
-                <button className='project-listing-btn'>
-                    <div className='project-listing-container'>
-                        <p className='project-name'>Project naem</p>
-                        <p className='project-short-desc'>This is just a short description of the project.</p>
-                        <p className='project-difficulty'>Difficulty: <span className=''>Hard</span></p>
-                        <div className='project-tags-scroller-container'>
-                            <button className='previous-tag-btn'><i class="fas fa-angle-left"></i></button>
-                            <div className='project-tags-container'>
-                                <ul className='project-tags'>
-                                    <li>Web development</li>
-                                    <li>Game development</li>
-                                    <li>C#</li>
-                                    <li>Business</li>
-                                    <li>Web scraping</li>
-                                </ul>
-                            </div>
-                            <button className='next-tag-btn'><i class="fas fa-angle-right"></i></button>
-                        </div>
-                    </div>
-                </button>
-                <button className='project-listing-btn'>
-                    <div className='project-listing-container'>
-                        <p className='project-name'>Project naem</p>
-                        <p className='project-short-desc'>This is just a short description of the project.</p>
-                        <p className='project-difficulty'>Difficulty: <span className=''>Hard</span></p>
-                        <div className='project-tags-scroller-container'>
-                            <button className='previous-tag-btn'><i class="fas fa-angle-left"></i></button>
-                            <div className='project-tags-container'>
-                                <ul className='project-tags'>
-                                    <li>Web development</li>
-                                    <li>Game development</li>
-                                    <li>C#</li>
-                                    <li>Business</li>
-                                    <li>Web scraping</li>
-                                </ul>
-                            </div>
-                            <button className='next-tag-btn'><i class="fas fa-angle-right"></i></button>
-                        </div>
-                    </div>
-                </button>
-                <button className='project-listing-btn'>
-                    <div className='project-listing-container'>
-                        <p className='project-name'>Project naem</p>
-                        <p className='project-short-desc'>This is just a short description of the project.</p>
-                        <p className='project-difficulty'>Difficulty: <span className=''>Hard</span></p>
-                        <div className='project-tags-scroller-container'>
-                            <button className='previous-tag-btn'><i class="fas fa-angle-left"></i></button>
-                            <div className='project-tags-container'>
-                                <ul className='project-tags'>
-                                    <li>Web development</li>
-                                    <li>Game development</li>
-                                    <li>C#</li>
-                                    <li>Business</li>
-                                    <li>Web scraping</li>
-                                </ul>
-                            </div>
-                            <button className='next-tag-btn'><i class="fas fa-angle-right"></i></button>
-                        </div>
-                    </div>
-                </button>
+    const [projects, setProjects] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
+    const [errorMsg, setErrorMsg] = useState(undefined)
+
+    useEffect(() =>
+    {
+        axios.get(`http://localhost:3001/api/projects${window.location.search}`)
+            .then((response) => {
+                setProjects(response.data.data)
+                setIsLoading(false)
+            }, (error) => {
+                if (error.response !== undefined)
+                    setErrorMsg(error.response.data.message)
+                else if (error.message === 'Network Error')
+                    setErrorMsg('Our servers are currently busy or down, please try again later!')
+                else
+                    setErrorMsg('Something went wrong, please try again!')
+                setIsLoading(false)
+            })
+    }, [])
+
+    if (isLoading)
+        return (
+            <div className='search-projects-container container-1'>
+                <p className='page-header'><b>Projects</b></p>
+                <div className='important-container'>
+                    <p className='important-text'>Loading...</p>
+                </div>
             </div>
-        </div>
-    )
+        )
+    else if (errorMsg)
+        return (
+            <div className='search-projects-container container-1'>
+                <p className='page-header'><b>Projects</b></p>
+                <div className='important-container'>
+                    <p className='important-text'>{ errorMsg }</p>
+                </div>
+            </div>
+        )
+    else
+        return (
+            <div className='search-projects-container container-1'>
+                <p className='page-header'><b>Projects</b></p>
+                <hr/>
+                <div className='project-listings-container'>
+                    { projects.map((project, index) => {
+                        return <ProjectListing key={ index } data={ project } />
+                    }) }
+                </div>
+            </div>
+        )
 }

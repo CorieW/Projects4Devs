@@ -1,4 +1,4 @@
-import React from 'react'
+import { useEffect } from 'react'
 import './Nav.css'
 import $ from 'jquery'
 
@@ -10,8 +10,16 @@ export default function Nav() {
         
         const searchInput = $('.search-input')[0]
 
-        window.location.replace('/search?searchQuery=' + searchInput.value)
+        if (searchInput.value.length > 0)
+            window.location.replace('/search?searchQuery=' + searchInput.value)
     }
+
+    useEffect(() => {
+        const urlParams = new URLSearchParams(window.location.search);
+
+        const searchInput = $('.search-input')[0]
+        searchInput.value = urlParams.get('searchQuery')
+    }, [])
 
     return (
         <div id='nav'>

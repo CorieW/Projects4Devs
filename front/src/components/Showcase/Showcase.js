@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import './Showcase.css'
 import axios from 'axios'
 import Project from '../Project/Project'
-import { get } from 'jquery'
 
 export default function Showcase()
 {
@@ -15,10 +14,10 @@ export default function Showcase()
     {
         axios.get(`http://localhost:3001/api/random-projects?numOfProjects=10`)
             .then((response) => {
-                setProjects([...projects, ...response['data']['data']])
+                setProjects([...projects, ...response.data.data])
             }, (error) => {
                 if (error.response !== undefined)
-                    setErrorMsg(error.response['data']['message'])
+                    setErrorMsg(error.response.data.message)
                 else if (error.message === 'Network Error')
                     setErrorMsg('Our servers are currently busy or down, please try again later!')
                 else
@@ -28,6 +27,9 @@ export default function Showcase()
 
     useEffect(() =>
     {
+        if(projects[projectIndice])
+            window.history.pushState('page2', document.title, '/project?id=' + projects[projectIndice].id);
+
         // Don't load more projects until the 2nd last project is being shown.
         if(projectIndice < projects.length - 2) return
 
@@ -63,7 +65,7 @@ export default function Showcase()
         return (
             <div className='showcase'>
                 { getPreviousBtn() }
-                <Project projectData={ projects[projectIndice] }/>
+                <Project data={ projects[projectIndice] }/>
                 { getNextBtn() }
             </div>
         )

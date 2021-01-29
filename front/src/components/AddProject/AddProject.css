@@ -1,5 +1,7 @@
-.project-name-input, .project-short-desc-input, .project-desc-input, .project-tags-input, .project-difficulty-dropdown {
+.project-name-input, .project-short-desc-input, .project-desc-input, .project-tag-input, .project-difficulty-dropdown {
     width: 100%;
+    height: 40px;
+    padding: 5px 5px 5px 10px;
     padding-left: 10px;
     background-color: transparent;
     border: none;
@@ -7,49 +9,34 @@
     outline: none;
     box-sizing: border-box;
 
+    font-size: 25px;
     color: whitesmoke;
 }
 
-.project-name-input:focus, .project-short-desc-input:focus, .project-desc-input:focus, .project-tags-input:focus, .project-difficulty-dropdown:focus {
-    border-left: 3px solid lime;
+.project-name-input:focus, .project-short-desc-input:focus, .project-desc-input:focus, .project-tag-input:focus, .project-difficulty-dropdown:focus {
+    border-left: 3px solid limegreen;
 }
 
 .project-name-input {
-    border-top: 3px solid lime;
+    height: 50px;
+    border-top: 3px solid limegreen;
 
     font-size: 40px;
 }
 
-.project-short-desc-input {
-    margin-top: 25px;
-    
-    font-size: 30px;
+.project-short-desc-input, .add-tag-form, .project-difficulty-dropdown, .whitespace {
+    margin-top: 25px;    
 }
 
 .project-desc-input {
     min-height: 200px;
     margin-top: 25px;
     resize: vertical;
-
-    font-size: 25px;
-}
-
-.project-tags-input {
-    margin-top: 25px;
-
-    font-size: 30px;
-}
-
-.project-difficulty-dropdown {
-    margin-top: 25px;
-
-    font-size: 30px;
 }
 
 .whitespace {
     width: 100%;
     height: 3px;
-    margin-top: 25px;
     border-left: 3px solid gray;
 }
 
@@ -66,8 +53,8 @@
 }
 
 #add-project-form .submit:hover {
-    border: 3px solid lime;
-    color: lime;
+    border: 3px solid limegreen;
+    color: limegreen;
 }
 
 .error-msg {
@@ -80,4 +67,58 @@
     color: red;
     font-size: 20px;
     text-align: center;
+}
+
+
+/** Add Tag Styles **/
+.add-tag-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.project-tag-input {
+    flex: 1;
+}
+
+.add-tag-btn {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    background-color: limegreen;
+    border: none;
+
+    vertical-align: middle;
+}
+
+.add-project-container .project-tags {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+        
+    list-style-type: none;
+}
+
+.add-project-container .project-tags button {
+    position: relative;
+    padding-right: 20px;
+    border: none;
+    display: inline-block;
+    margin: 5px 5px 0 0;
+    outline: none;
+    cursor: pointer;
+
+    font-size: 20px;
+}
+
+.add-project-container .project-tags button:hover {
+    background-color: rgb(35, 35, 35);
+}
+
+.add-project-container .project-tags button .remove-tag-icon {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+
+    font-size: 10px;
 }

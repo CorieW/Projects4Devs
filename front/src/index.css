@@ -38,6 +38,11 @@ h1 {
 
 h2, h3, h4, h5, h6, p, li {
   color: whitesmoke;
+  word-wrap: break-word;
+}
+
+hr {
+  border: 1px solid rgb(35, 35, 35);
 }
 
 .container-1 {
@@ -64,7 +69,16 @@ h2, h3, h4, h5, h6, p, li {
 }
 
 .page-header {
+  margin: 0 0 20px;
+
   font-size: 40px;
+}
+
+.section-header {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
 }
 
 .info {
@@ -77,4 +91,35 @@ h2, h3, h4, h5, h6, p, li {
 
 .huge-info {
   font-size: 30px;
+}
+
+.tag {
+  padding: 0 5px;
+  background-color: rgba(255, 255, 255, 0.25);
+  border: none;
+  border-radius: 5px;
+
+  font-size: 13px;
+  color: whitesmoke;
+}
+
+/* Difficulty Levels */
+.difficulty-easy {
+  font-weight: bold;
+  color: limegreen;
+}
+
+.difficulty-moderate {
+  font-weight: bold;
+  color: gold;
+}
+
+.difficulty-hard {
+  font-weight: bold;
+  color: red;
+}
+
+.difficulty-extremely-hard {
+  font-weight: bold;
+  color: palevioletred;
 }

@@ -11,3 +11,7 @@
     font-weight: bold;
     margin: 15px 0 0;
 }
+
+.guidelines-container .section-header {
+    margin: 0;
+}
