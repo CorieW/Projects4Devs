@@ -135,7 +135,7 @@
 
 /** Error Message CSS **/
 .error-msg {
-    width: 50%;
+    max-width: 600px;
     padding: 5px;
     margin: auto;
     margin-bottom: 15px;
