@@ -58,10 +58,11 @@ hr {
 .important-container {
   position: absolute;
   top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
 
+  width: 90%;
   max-width: 900px;
-  width: 60%;
-  margin: auto;
 
   text-align: center;
 }
@@ -133,6 +134,7 @@ hr {
 /** =============== <= Large Phone View ============== **/
 /** ================================================== **/
 @media only screen and (max-width: 502px) {
+  /** Global Texts CSS **/
   .important-text {
     font-size: 9vw;
   }

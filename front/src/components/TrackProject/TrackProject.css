@@ -25,3 +25,13 @@
 .accepted {
     color: limegreen;
 }
+
+/** ================================================== **/
+/** =============== <= Large Phone View ============== **/
+/** ================================================== **/
+@media only screen and (max-width: 502px) {
+    /** Track Project Icon CSS **/
+    .track-project-container .icon {
+        font-size: 9vw;
+    }
+}
