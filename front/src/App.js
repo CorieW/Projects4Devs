@@ -15,9 +15,9 @@ function App() {
   const [project, setProject] = useState(undefined)
 
   return (
-    <div className='App'>
+    <div className='app'>
       <Nav />
-      <div id='content'>
+      <div id='content-container'>
         <Router>
           <Switch>
             <Route exact path='/' component={Showcase} />
@@ -25,7 +25,7 @@ function App() {
             <Route path='/add' component={AddProject} />
             <Route path='/track' component={TrackProject} />
             <Route path='/guidelines' component={Guidelines} />
-            <Route path='/search' component={SearchProjects} />
+            <Route path='/results' component={SearchProjects} />
             <Route path='/' component={Page404} />
           </Switch>
         </Router>

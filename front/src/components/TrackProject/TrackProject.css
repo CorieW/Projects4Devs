@@ -1,19 +1,21 @@
-.progress-text a {
-    font-size: 35px;
-}
-
+/** ================================================== **/
+/** ================== Default View ================== **/
+/** ================================================== **/
+/** Track Project Icon CSS **/
 .track-project-container .icon {
     padding-left: 10px;
 
     font-size: 50px;
 }
 
+
+/** Status Colors CSS **/
 .pending {
-    color: aqua;
+    color: black;
 }
 
 .reviewing {
-    color: gold;
+    color: orange;
 }
 
 .declined {

@@ -1,8 +1,13 @@
+/** ================================================== **/
+/** ================== Default View ================== **/
+/** ================================================== **/
+/** Default Element CSS **/
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  min-width: 280px;
+  margin: auto 0;
+  background-color: white;
+
+  font-family: 'Chewy', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -12,16 +17,19 @@ code {
     monospace;
 }
 
-button, input, textarea {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+button, input, textarea, select {
+  font-family: 'Chewy', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+input::placeholder, textarea::placeholder {
+  color: black;
+}
+
 a {
-  color: gold;
+  color: orange;
+  text-decoration: none;
 }
 
 .disabled {
@@ -33,93 +41,123 @@ a {
 }
 
 h1 {
-  color: white;
+  color: black;
 }
 
 h2, h3, h4, h5, h6, p, li {
-  color: whitesmoke;
+  color: black;
   word-wrap: break-word;
 }
 
 hr {
-  border: 1px solid rgb(35, 35, 35);
+  border: 1px solid black;
 }
 
-.container-1 {
-  width: 70%;
-  max-width: 1000px;
-  margin: auto;
-}
 
+/** Global Containers CSS **/
 .important-container {
   position: absolute;
-  left: 0;
-  top: 35%;
-  width: 100%;
+  top: 30%;
+
+  max-width: 900px;
+  width: 60%;
+  margin: auto;
 
   text-align: center;
 }
 
+
+/** Global Texts CSS **/
 .important-text {
-  width: 50%;
   margin: auto auto 50px;
 
-  font-size: 40px;
-  color: white;
+  font-size: 36px;
+  color: black;
 }
 
 .page-header {
-  margin: 0 0 20px;
+  margin: 0;
 
-  font-size: 40px;
+  text-align: center;
+  font-size: 36px;
+}
+
+.page-info {
+  margin: 0 0 10px;
+
+  text-align: center;
+  font-size: 25px;
 }
 
 .section-header {
+  margin: 0;
+
   text-align: center;
   font-size: 30px;
   font-weight: bold;
-  color: white;
+  color: black;
 }
 
 .info {
-  font-size: 18px;
+  margin: 0 0 5px;
+
+  font-size: 21px;
 }
 
 .big-info {
+  margin: 0 0 5px;
+
   font-size: 25px;
 }
 
 .huge-info {
+  margin: 0 0 5px;
+
   font-size: 30px;
 }
 
+
+/** Global Classes CSS **/
 .tag {
   padding: 0 5px;
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: limegreen;
   border: none;
   border-radius: 5px;
 
   font-size: 13px;
-  color: whitesmoke;
+  text-shadow: white 1px 1px;
+  color: black;
 }
 
-/* Difficulty Levels */
-.difficulty-easy {
-  font-weight: bold;
-  color: limegreen;
-}
-
-.difficulty-moderate {
-  font-weight: bold;
-  color: gold;
-}
-
-.difficulty-hard {
-  font-weight: bold;
-  color: red;
-}
-
-.difficulty-extremely-hard {
-  font-weight: bold;
-  color: palevioletred;
+/** ================================================== **/
+/** =============== <= Large Phone View ============== **/
+/** ================================================== **/
+@media only screen and (max-width: 502px) {
+  .important-text {
+    font-size: 9vw;
+  }
+  
+  .page-header {  
+    font-size: 9vw;
+  }
+  
+  .page-info {
+    font-size: 5.5vw;
+  }
+  
+  .section-header {  
+    font-size: 7vw;
+  }
+  
+  .info {  
+    font-size: 5vw;
+  }
+  
+  .big-info {  
+    font-size: 5.5vw;
+  }
+  
+  .huge-info {  
+    font-size: 7vw;
+  }
 }

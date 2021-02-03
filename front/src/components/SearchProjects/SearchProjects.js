@@ -28,7 +28,7 @@ export default function SearchProjects()
 
     if (isLoading)
         return (
-            <div className='search-projects-container container-1'>
+            <div className='search-projects-container'>
                 <p className='page-header'><b>Projects</b></p>
                 <div className='important-container'>
                     <p className='important-text'>Loading...</p>
@@ -37,7 +37,7 @@ export default function SearchProjects()
         )
     else if (errorMsg)
         return (
-            <div className='search-projects-container container-1'>
+            <div className='search-projects-container'>
                 <p className='page-header'><b>Projects</b></p>
                 <div className='important-container'>
                     <p className='important-text'>{ errorMsg }</p>
@@ -46,9 +46,8 @@ export default function SearchProjects()
         )
     else
         return (
-            <div className='search-projects-container container-1'>
+            <div className='search-projects-container'>
                 <p className='page-header'><b>Projects</b></p>
-                <hr/>
                 <div className='project-listings-container'>
                     { projects.map((project, index) => {
                         return <ProjectListing key={ index } data={ project } />

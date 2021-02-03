@@ -1,6 +1,9 @@
+/** ================================================== **/
+/** ================== Default View ================== **/
+/** ================================================== **/
+/** Slide Buttons **/
 .previous-project-btn, .next-project-btn {
-    position: absolute;
-    width: 40px;
+    position: fixed;
     height: 40px;
     padding: 0;
     top: 45%;
@@ -13,25 +16,20 @@
 .previous-project-btn .icon, .next-project-btn .icon {
     transform: scale(1);
 
-    color: white;
+    color: black;
     font-size: 40px;
     line-height: 40px;
 
     transition: transform 0.2s;
 }
 
-.previous-project-btn .icon:hover, .next-project-btn .icon:hover {
-    transform: scale(1.5);
-}
-
-.previous-project-btn .icon:active, .next-project-btn .icon:active {
-    transform: scale(1);
-
-    color: white;
+.previous-project-btn:hover, .next-project-btn:hover {
+    transform: scale(1.25);
 }
 
 .previous-project-btn {
     left: 5%;
+    
 }
 
 .next-project-btn {

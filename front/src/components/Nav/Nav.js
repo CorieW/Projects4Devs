@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import './Nav.css'
+import logo from '../../assets/logo.svg'
 import $ from 'jquery'
 
 export default function Nav() {
@@ -11,7 +12,7 @@ export default function Nav() {
         const searchInput = $('.search-input')[0]
 
         if (searchInput.value.length > 0)
-            window.location.replace('/search?searchQuery=' + searchInput.value)
+            window.location.replace('/results?searchQuery=' + searchInput.value)
     }
 
     useEffect(() => {
@@ -22,15 +23,26 @@ export default function Nav() {
     }, [])
 
     return (
-        <div id='nav'>
-            <h1 className='site-title'><a href='/' aria-label='Main page'>Projects4Devs</a></h1>
+        <div id='nav-container'>
+            <div id='site-header'>
+                <a href='/' aria-label='Home page'>
+                    <img src={ logo } id='site-logo'/>
+                    <p id='site-title'>Projects4Devs</p>
+                </a>
+            </div>
 
-            <div className='buttons'>
+            <div className='search-container'>
                 <form onSubmit={search} className='search-form'>
-                    <input type='text' placeholder='Search' className='search-input'></input>
+                    <input type='text' placeholder='Search...' className='search-input'></input>
                     <button aria-label='Search' className='search-btn'><i className="fas fa-search"></i></button>
                 </form>
-                <a href='/add' aria-label='Add project' className='add-project-link'><i className="fas fa-plus"></i></a>
+            </div>
+
+            <a href='/add' aria-label='Add project' className='add-project-link'>+ Add IDEA</a>
+            
+            <div className='mobile-btns-container'>
+                <button aria-label='Open search bar' className='mobile-search-btn'><i className="fas fa-search"></i></button>
+                <a href='/add' aria-label='Add project' className='add-project-mobile-link'>+</a>
             </div>
         </div>
     )

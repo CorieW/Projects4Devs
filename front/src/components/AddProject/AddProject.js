@@ -62,18 +62,16 @@ export default function AddProject()
     }
 
     return (
-        <div className='container-1 add-project-container'>
-            <p className='info'>See the <a href='/guidelines'>project guidelines page</a> for information on what you can and can't involve in project idea submissions.</p>
-            <form onSubmit={ submit } id='add-project-form'>
+        <div id='add-project-container'>
+            <h1 className='page-header'>Add Project</h1>
+            <p className='page-info'>See the <a href='/guidelines'>project guidelines page</a> for information on what you can and can't involve in project idea submissions.</p>
+            <form onSubmit={ submit } className='add-project-form'>
                 <input type='text' placeholder='Enter project name...' className='project-name-input'></input>
-                <div className='whitespace'></div>
                 <input type='text' placeholder='Enter short description...' className='project-short-desc-input'></input>
-                <div className='whitespace'></div>
                 <textarea placeholder='Enter description...' className='project-desc-input'></textarea>
-                <div className='whitespace'></div>
                 <div className='add-tag-container'>
                     <input type='text' placeholder='Enter tag...' className='project-tag-input'/>
-                    <button onClick={ addTag } className='add-tag-btn'><i className="fas fa-plus"></i></button>
+                    <button onClick={ addTag } aria-label='Add tag' className='add-tag-btn'><i className="fas fa-plus icon"></i></button>
                     <ul className='project-tags'>
                         { tags.map((tag, index) => {
                             return <button key={ index } onClick={ (e) => removeTag(e, index) } className='tag'>
@@ -83,18 +81,16 @@ export default function AddProject()
                         }) }
                     </ul>
                 </div>
-                <div className='whitespace'></div>
                 <select className='project-difficulty-dropdown'>
                     <option value='' selected disabled>Select difficulty...</option>
                     <option value=''>Unsure</option>
-                    <option value='Easy'>Easy</option>
-                    <option value='Moderate'>Moderate</option>
-                    <option value='Hard'>Hard</option>
-                    <option value='Extremely Hard'>Extremely Hard</option>
+                    <option value='1/5'>1/5 (Easy)</option>
+                    <option value='2/5'>2/5</option>
+                    <option value='3/5'>3/5</option>
+                    <option value='4/5'>4/5</option>
+                    <option value='5/5'>5/5 (Very Difficult)</option>
                 </select>
-                <div className='whitespace'></div>
-                <div className='whitespace'></div>
-                <button type='submit' className='submit'>Submit Project</button>
+                <button type='submit' aria-label='Submit project' className='submit'>Submit Project</button>
                 <p className={ errorMsg.length > 0 ? 'error-msg' : 'hidden' }>{ errorMsg }</p>
             </form>
         </div>

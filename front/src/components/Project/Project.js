@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import './Project.css'
+import coffeeImg from '../../assets/coffee.png'
+import emptyCupImg from '../../assets/empty_cup.png'
 import axios from 'axios'
 
 export default function Project(props)
@@ -21,14 +23,25 @@ export default function Project(props)
 
     function getDifficulty()
     {
-        const difficulty = project.difficulty
+        const difficulty = project.difficulty[0]
+        console.log(difficulty)
+        const images = []
 
-        if (difficulty === "") return null;
+        for (let i = 0; i < 5; i++)
+        {
+            if (i < difficulty)
+                images.push(<img src={ coffeeImg } className='difficulty-icon'/>)
+            else
+                images.push(<img src={ emptyCupImg } className='difficulty-icon'/>)
+        }
 
         return (
-            <p className='project-difficulty'>
-                Difficulty: <span className={ 'difficulty-' + difficulty.toLowerCase().replace(' ', '-') }>{ difficulty }</span>
-            </p>
+            <ul className='project-difficulty'>
+                <li>Difficulty:</li>
+                { images.map(image => {
+                    return <li>{ image }</li>
+                }) }
+            </ul>
         )
     }
 
@@ -44,7 +57,7 @@ export default function Project(props)
                 { tags.map((tag, index) => {
                     return ( 
                         <li key={ index }>
-                            <a href={ `/search?searchQuery=${tag}` }>
+                            <a href={ `/results?searchQuery=${tag}` }>
                                 { tag }
                             </a>{ index === tags.length - 1 ? '' : ',' } 
                         </li> )
@@ -92,7 +105,7 @@ export default function Project(props)
     else
     {
         return (
-            <div className='project-container container-1'>
+            <div className='project-container'>
                 <p className='project-name'>{ project.project_name }</p>
                 { getShortDescription() }
                 <p className='project-desc'>{ project.description }</p>

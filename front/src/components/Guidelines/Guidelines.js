@@ -1,14 +1,11 @@
 import React from 'react'
-import './Guidelines.css'
 
 export default function Guidelines()
 {
     return (
-        <div className='guidelines-container container-1'>
-            <div className='important'>
-                <h1 className='page-header'>GUIDELINES</h1>
-                <p className='big-info'>By following the below guidelines your project ideas should have no problem getting approved!</p>
-            </div>
+        <div className='guidelines-container'>
+            <h1 className='page-header'>GUIDELINES</h1>
+            <p className='page-info'>By following the below guidelines your project ideas should have no problem getting approved!</p>
             <hr/>
             <p className='section-header'>Rules</p>
             <ol>

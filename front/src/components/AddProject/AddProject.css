@@ -1,96 +1,80 @@
+/** ================================================== **/
+/** ================== Default View ================== **/
+/** ================================================== **/
+/** Add Project Form CSS **/
+.add-project-form {
+    margin-top: 20px;
+}
+
+
+/** Page Shared CSS **/
 .project-name-input, .project-short-desc-input, .project-desc-input, .project-tag-input, .project-difficulty-dropdown {
     width: 100%;
-    height: 40px;
-    padding: 5px 5px 5px 10px;
-    padding-left: 10px;
+    height: 50px;
+    padding: 5px 5px 5px 8px;
     background-color: transparent;
     border: none;
-    border-left: 3px solid gray;
+    border-bottom: 3px solid gray;
     outline: none;
     box-sizing: border-box;
 
-    font-size: 25px;
-    color: whitesmoke;
+    font-size: 21px;
 }
 
-.project-name-input:focus, .project-short-desc-input:focus, .project-desc-input:focus, .project-tag-input:focus, .project-difficulty-dropdown:focus {
-    border-left: 3px solid limegreen;
-}
 
+/** Project Name Input CSS **/
 .project-name-input {
-    height: 50px;
-    border-top: 3px solid limegreen;
-
-    font-size: 40px;
+    font-size: 26px;
 }
 
-.project-short-desc-input, .add-tag-form, .project-difficulty-dropdown, .whitespace {
-    margin-top: 25px;    
+
+/** Short Description Input CSS **/
+.project-short-desc-input {
+    margin-top: 5px;
 }
 
+
+/** Description Input CSS **/
 .project-desc-input {
     min-height: 200px;
+    padding: 5px;
     margin-top: 25px;
+    border: 3px solid gray;
     resize: vertical;
 }
 
-.whitespace {
-    width: 100%;
-    height: 3px;
-    border-left: 3px solid gray;
-}
 
-#add-project-form .submit {
-    width: 100%;
-    height: 50px;
-    margin: 25px 0 15px;
-    background-color: transparent;
-    border: 3px solid gray;
-    outline: none;
-
-    font-size: 25px;
-    color: gray;
-}
-
-#add-project-form .submit:hover {
-    border: 3px solid limegreen;
-    color: limegreen;
-}
-
-.error-msg {
-    width: 50%;
-    padding: 5px;
-    margin: auto;
-    margin-bottom: 15px;
-    border: 2px solid red;
-
-    color: red;
-    font-size: 20px;
-    text-align: center;
-}
-
-
-/** Add Tag Styles **/
+/** Add Tag CSS **/
 .add-tag-container {
     display: flex;
+    margin-top: 25px;
+
     flex-wrap: wrap;
 }
 
 .project-tag-input {
     flex: 1;
+    border-right: 0px;
 }
 
 .add-tag-btn {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     padding: 5px;
-    background-color: limegreen;
+    background-color: transparent;
     border: none;
+    border-bottom: 3px solid gray;
+    outline: none;
+    cursor: pointer;
 
     vertical-align: middle;
 }
 
-.add-project-container .project-tags {
+.add-tag-btn:hover .icon {
+    transform: scale(1.25);
+}
+
+#add-project-container .project-tags {
     width: 100%;
     padding: 0;
     margin: 0;
@@ -98,27 +82,99 @@
     list-style-type: none;
 }
 
-.add-project-container .project-tags button {
+#add-project-container .project-tags button {
     position: relative;
-    padding-right: 20px;
-    border: none;
+
     display: inline-block;
+    padding-right: 20px;
     margin: 5px 5px 0 0;
+    border: none;
     outline: none;
     cursor: pointer;
 
     font-size: 20px;
 }
 
-.add-project-container .project-tags button:hover {
-    background-color: rgb(35, 35, 35);
+#add-project-container .project-tags button:hover {
+    background-color: red;
 }
 
-.add-project-container .project-tags button .remove-tag-icon {
+#add-project-container .project-tags button .remove-tag-icon {
     position: absolute;
     top: 50%;
     right: 5px;
     transform: translateY(-50%);
 
     font-size: 10px;
+}
+
+
+/** Difficulty Dropdown CSS **/
+.project-difficulty-dropdown {
+    margin-top: 5px;
+}
+
+
+/** Add Project Form Submit Button CSS **/
+.add-project-form .submit {
+    width: 100%;
+    height: 50px;
+    margin: 25px 0 15px;
+    background-color: transparent;
+    border: 4px solid black;
+    outline: none;
+
+    font-size: 25px;
+    text-shadow: white 2px 2px ;
+}
+
+.add-project-form .submit:hover {
+    background-color: limegreen;
+}
+
+
+/** Error Message CSS **/
+.error-msg {
+    width: 50%;
+    padding: 5px;
+    margin: auto;
+    margin-bottom: 15px;
+    border: 4px solid red;
+
+    color: red;
+    font-size: 20px;
+    text-align: center;
+}
+
+/** ================================================== **/
+/** =============== <= Large Phone View ============== **/
+/** ================================================== **/
+@media only screen and (max-width: 502px) {
+    /** Page Shared CSS **/
+    .project-name-input, .project-short-desc-input, .project-desc-input, .project-tag-input, .project-difficulty-dropdown {
+        font-size: 5vw;
+    }
+
+
+    /** Project Name Input CSS **/
+    .project-name-input {
+        font-size: 6vw;
+    }
+
+
+    /** Add Tag CSS **/
+    .add-tag-btn {
+        font-size: 4vw;
+    }
+
+
+    /** Add Project Form Submit Button CSS **/
+    .add-project-form .submit {
+        font-size: 6vw;
+    }
+
+    /** Error Message CSS **/
+    .error-msg {
+        font-size: 5vw;
+    }
 }

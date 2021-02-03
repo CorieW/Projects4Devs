@@ -1,13 +1,18 @@
+/** ================================================== **/
+/** ================== Default View ================== **/
+/** ================================================== **/
+/** Project Listing Button CSS **/
 .project-listing-link {
     flex: 1;
     min-width: 200px;
     width: calc(25% - 10px);
     max-width: calc(25% - 10px);
     height: fit-content;
-    background-color: rgb(35, 35, 35);
+    background-color: #FFDD2A;
     padding: 0;
     margin: 5px;
     border: 3px solid transparent;
+    border-top: 5px solid #dfba01;
     outline: none;
     cursor: pointer;
 
@@ -18,41 +23,63 @@
 
 .project-listing-link:hover {
     transform: scale(1.1);
-    border: 3px solid lime;
+    box-shadow: gray 1px 1px 10px;
 }
 
 .project-listing-link:active {
     transform: scale(1);
 }
 
+
+/** Project Listing Container CSS **/
 .project-listing-container {
     padding: 10px 5px 2px;
-    background-color: rgb(35, 35, 35);
     overflow: hidden;
 }
 
+
+/** Project Name CSS **/
 .project-listing-container .project-name {
     margin: 0 0 5px;
 
-    color: white;
     font-weight: bold;
     font-size: 20px;
     text-align: center;
 }
 
-.project-listing-container .project-short-desc {
-    margin: 0 0 15px;
 
-    color: gray;
+/** Short Description CSS **/
+.project-listing-container .project-short-desc {
+    margin: 0 0 10px;
+
+    font-style: italic;
     font-size: 16px;
     text-align: center;
 }
 
+
+/** Difficulty CSS **/
 .project-listing-container .project-difficulty {
-    font-size: 18px;
+    height: 30px;
+    margin: 0 0 18px;
+    padding: 0;
     text-align: center;
 }
 
+.project-listing-container .project-difficulty li {
+    display: inline-block;
+    height: 30px;
+    padding-right: 5px;
+    list-style-type: none;
+}
+
+.project-listing-container .project-difficulty .difficulty-icon {
+    display: inline-block;
+    width: 30px;
+}
+
+
+/** Tags CSS **/
 .project-listing-container .project-tags {
     padding: 0;
     margin: 0;
@@ -65,4 +92,27 @@
     margin: 0 5px 5px 0;
 
     vertical-align: middle;
+}
+
+/** ================================================== **/
+/** ================= <= Tablet View ================= **/
+/** ================================================== **/
+@media only screen and (max-width: 768px) {
+    /** Project Listing Button CSS **/
+    .project-listing-link {
+        width: 100%;
+        max-width: unset;
+    }
+}
+
+/** ================================================== **/
+/** =============== <= Large Phone View ============== **/
+/** ================================================== **/
+@media only screen and (max-width: 502px) {
+    /** Project Listing Button CSS **/
+    .project-listing-link {
+        min-width: 100%;
+        max-width: unset;
+        margin: 5px 0;
+    }
 }

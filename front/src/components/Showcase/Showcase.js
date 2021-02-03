@@ -25,6 +25,16 @@ export default function Showcase()
             })
     }
 
+    function getLeftArrow()
+    {
+        return <button onClick={() => setProjectIndice(projectIndice - 1)} aria-label='Previous project' className='previous-project-btn'><i class="icon-l-arrow-3 icon"></i></button>
+    }
+
+    function getRightArrow()
+    {
+        return <button onClick={() => setProjectIndice(projectIndice + 1)} aria-label='Next project' className='next-project-btn'><i className='icon-r-arrow-3 icon'></i></button>
+    }
+
     useEffect(() =>
     {
         if(projects[projectIndice])
@@ -40,11 +50,11 @@ export default function Showcase()
     {
         if (projectIndice > 0 && projectIndice < projects.length - 1)
             return (
-                <button onClick={() => setProjectIndice(projectIndice - 1)} className='previous-project-btn'><i class="fas fa-arrow-left icon"></i></button>
+                getLeftArrow()
             )
         else if (projectIndice === projects.length - 1)
             return (
-                <button onClick={() => setProjectIndice(projectIndice - 1)} className='previous-project-btn'><i class="fas fa-arrow-left icon"></i></button>
+                getLeftArrow()
             ) 
     }
 
@@ -52,11 +62,11 @@ export default function Showcase()
     {
         if (projectIndice === 0)
             return (
-                <button onClick={() => setProjectIndice(projectIndice + 1)} className='next-project-btn'><i class="fas fa-arrow-right icon"></i></button>
+                getRightArrow()
             )
         else if (projectIndice > 0 && projectIndice < projects.length - 1)
             return (
-                <button onClick={() => setProjectIndice(projectIndice + 1)} className='next-project-btn'><i class="fas fa-arrow-right icon"></i></button>
+                getRightArrow()
             )
     }
 

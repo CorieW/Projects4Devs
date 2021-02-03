@@ -1,10 +1,56 @@
-body {
-  margin: auto 0;
-  background-color: rgb(15, 15, 15);
+/** ================================================== **/
+/** ================== Default View ================== **/
+/** ================================================== **/
+/** Content Container CSS **/
+#content-container {
+  max-width: 900px;
+  width: 60%;
+  /* The screen height subtracted by the height and margin of the nav and footer together. */
+  min-height: calc(100vh - 130px);
+  margin: 20px auto;
+  box-sizing: border-box;
 }
 
-#content {
-  width: 80%;
-  min-height: calc(100vh - 100px);
-  margin: auto;
+/** ================================================== **/
+/** ================= <= Laptop View ================= **/
+/** ================================================== **/
+@media only screen and (max-width: 1024px) {
+  /** Content Container CSS **/
+  #content-container {
+    width: 67.5%;
+  }
+}
+
+/** ================================================== **/
+/** ================= <= Tablet View ================= **/
+/** ================================================== **/
+@media only screen and (max-width: 768px) {
+  /** Content Container CSS **/
+  #content-container {
+    width: 75%;
+    min-height: calc(100vh - 132.5px);
+  }
+}
+
+/** ================================================== **/
+/** =============== <= Large Phone View ============== **/
+/** ================================================== **/
+@media only screen and (max-width: 502px) {
+  /** Content Container CSS **/
+  #content-container {
+    width: 100%;
+    min-height: calc(100vh - 152.5px);
+    padding: 0 10px;
+    margin: 30px auto;
+  }
+}
+
+/** ================================================== **/
+/** =============== < Small Phone View =============== **/
+/** ================================================== **/
+@media only screen and (max-width: 280px) {
+  /** Content Container CSS **/
+  #content-container {
+    min-height: 0;
+  }
 }

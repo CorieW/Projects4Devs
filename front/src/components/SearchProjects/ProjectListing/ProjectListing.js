@@ -1,15 +1,31 @@
 import React from 'react'
 import './ProjectListing.css'
+import coffeeImg from '../../../assets/coffee.png'
+import emptyCupImg from '../../../assets/empty_cup.png'
 
 export default function ProjectListing(props)
 {
     function getDifficulty()
     {
-        const difficulty = props.data.difficulty
+        const difficulty = props.data.difficulty[0]
+        console.log(difficulty)
+        const images = []
 
-        if (!difficulty) return
+        for (let i = 0; i < 5; i++)
+        {
+            if (i < difficulty)
+                images.push(<img src={ coffeeImg } className='difficulty-icon'/>)
+            else
+                images.push(<img src={ emptyCupImg } className='difficulty-icon'/>)
+        }
 
-        return <p className='project-difficulty'>Difficulty: <span className={ 'difficulty-' + difficulty.toLowerCase().replace(' ', '-') }>{ difficulty }</span></p>
+        return (
+            <ul className='project-difficulty'>
+                { images.map(image => {
+                    return <li>{ image }</li>
+                }) }
+            </ul>
+        )
     }
 
     function getShortDesc()
@@ -40,7 +56,7 @@ export default function ProjectListing(props)
     }
 
     return (
-        <a href={ `/project?id=${ props.data.id }` } className='project-listing-link'>
+        <a href={ `/project?id=${ props.data.id }` } aria-label='Open project' className='project-listing-link'>
             <div className='project-listing-container'>
                 <p className='project-name'>{ props.data.project_name }</p>
                 { getShortDesc() }

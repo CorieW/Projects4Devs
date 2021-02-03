@@ -1,5 +1,20 @@
+/** ================================================== **/
+/** ================== Default View ================== **/
+/** ================================================== **/
+/** Container CSS **/
 .project-listings-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
+    margin-top: 10px;
+}
+
+/** ================================================== **/
+/** ================= <= Tablet View ================= **/
+/** ================================================== **/
+@media only screen and (max-width: 768px) {
+    /** Container CSS **/
+    .project-listings-container {
+        justify-content: center;
+    }
 }

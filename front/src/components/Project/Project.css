@@ -1,42 +1,132 @@
+/** ================================================== **/
+/** ================== Default View ================== **/
+/** ================================================== **/
+/** Project Name CSS **/
 .project-container .project-name {
     margin: 0;
 
     text-align: center;
-    color: white;
-    font-size: 40px;
-    font-weight: bold;
+    font-size: 36px;
 }
 
+
+/** Short Description CSS **/
 .project-container .project-short-desc {
     margin: 0;
+    padding: 0 5%;
 
+    color: black;
+    font-style: italic;
     text-align: center;
-    color: gray;
-    font-size: 25px;
+    font-size: 21px;
 }
 
+
+/** Description CSS **/
 .project-container .project-desc {
-    font-size: 25px;
+    margin: 30px 0;
+
+    font-size: 21px;
     white-space: pre-wrap;
 }
 
-.project-container .project-difficulty {
-    font-size: 25px;
-}
 
-.project-container .project-tags {
+/** Difficulty CSS **/
+.project-container .project-difficulty {
+    display: flex;
+    width: fit-content;
+    height: 40px;
+    margin: 0;
     padding: 0;
 
+    font-size: 25px;
+    line-height: 40px;
+}
+
+.project-container .project-difficulty li {
+    flex: 1;
+    display: inline-block;
+    max-width: fit-content;
+    height: 40px;
+    padding-right: 10px;
+
+    vertical-align: bottom;
+    list-style-type: none;
+}
+
+.project-container .project-difficulty .difficulty-icon {
+    display: inline-block;
+    max-width: 40px;
+
+    vertical-align: bottom;
+}
+
+
+/** Tags CSS **/
+.project-container .project-tags {
+    margin: 10px 0 0 0;
+    padding: 0;
+
+    font-size: 25px;
     text-align: left;
 }
 
 .project-container .project-tags li {
     display: inline-block;
     padding: 0 10px 0 0;
-
-    font-size: 20px;
 }
 
-.project-container .project-tags li a {
-    text-decoration: none;
+
+/** ================================================== **/
+/** =============== <= Large Phone View ============== **/
+/** ================================================== **/
+@media only screen and (max-width: 502px) {
+    /** Project Name CSS **/
+    .project-container .project-name {
+        font-size: 9vw;
+    }
+
+
+    /** Short Description CSS **/
+    .project-container .project-short-desc {
+        font-size: 6vw;
+    }
+
+
+    /** Description CSS **/
+    .project-container .project-desc {
+        margin: 30px 0;
+
+        font-size: 5vw;
+        text-align: center;
+    }
+
+
+    /** Difficulty CSS **/
+    .project-container .project-difficulty {
+        height: 7vw;
+        margin: 0 auto;
+
+        font-size: 6vw;
+        text-align: center;
+        line-height: 7vw;
+    }
+
+    .project-container .project-difficulty li {
+        height: 7vw;
+    }
+
+    .project-container .project-difficulty .difficulty-icon {
+        display: inline-block;
+        max-width: 7vw;
+    
+        vertical-align: middle;
+    }
+
+
+    /** Tags CSS **/
+    .project-container .project-tags {
+        font-size: 6vw;
+        text-align: center;
+    }
 }
