@@ -27,7 +27,7 @@ export default function AddProject()
         }).then((response) => {
             window.location.replace('/track?id=' + response.data.projectID)
         }, (error) => {
-            if (error.response !== undefined)
+            if (error.response.data.message !== undefined)
                 setErrorMsg(error.response.data.message)
             else if (error.message === 'Network Error')
                 setErrorMsg('Our servers are currently busy or down, please try again later!')

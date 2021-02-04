@@ -65,7 +65,7 @@ export default function TrackProject()
             .then((response) => {
                 setProgressStatus(response.data.data.progress)
             }, (error) => {
-                if (error.response !== undefined)
+                if (error.response.data.message !== undefined)
                     setErrorMsg(error.response.data.message)
                 else if (error.message === 'Network Error')
                     setErrorMsg('Our servers are currently busy or down, please try again later!')

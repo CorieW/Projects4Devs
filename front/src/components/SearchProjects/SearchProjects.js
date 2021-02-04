@@ -16,7 +16,7 @@ export default function SearchProjects()
                 setProjects(response.data.data)
                 setIsLoading(false)
             }, (error) => {
-                if (error.response !== undefined)
+                if (error.response.data.message !== undefined)
                     setErrorMsg(error.response.data.message)
                 else if (error.message === 'Network Error')
                     setErrorMsg('Our servers are currently busy or down, please try again later!')

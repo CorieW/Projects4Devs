@@ -74,13 +74,16 @@ export default function Project(props)
                 setProject(response.data.data)
                 setIsLoading(false)
             }, (error) => {
-                if (error.response !== undefined)
+                console.log("error")
+                if (error.response.data.message !== undefined) {
                     setErrorMsg(error.response.data.message)
+                }
                 else if (error.message === 'Network Error')
                     setErrorMsg('Our servers are currently busy or down, please try again later!')
                 else
                     setErrorMsg('Something went wrong, please try again!')
                 setIsLoading(false)
+                console.log(errorMsg)
             })
     }, [props.data, project])
 
