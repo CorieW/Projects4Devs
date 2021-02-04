@@ -22,7 +22,7 @@ export default function Showcase()
                 else
                     setErrorMsg('Something went wrong, please try again!')
             })
-    })
+    }, [projects])
 
     function getLeftArrow()
     {
