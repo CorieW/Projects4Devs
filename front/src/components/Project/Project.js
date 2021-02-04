@@ -71,11 +71,9 @@ export default function Project(props)
 
         axios.get(`${process.env.REACT_APP_API_ORIGIN}/api/project${window.location.search}`)
             .then((response) => {
-                console.log(response)
                 setProject(response.data.data)
                 setIsLoading(false)
             }, (error) => {
-                console.log(error)
                 if (error.message === 'Network Error')
                     setErrorMsg('Our servers are currently busy or down, please try again later!')
                 else if (error.response.data.message !== undefined)
