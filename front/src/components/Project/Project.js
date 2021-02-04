@@ -6,7 +6,7 @@ import axios from 'axios'
 
 export default function Project(props)
 {
-    const [project, setProject] = useState(props.data)
+    const [project, setProject] = useState(undefined)
     const [isLoading, setIsLoading] = useState(project ? false : true)
     const [errorMsg, setErrorMsg] = useState(undefined)
 
@@ -66,9 +66,8 @@ export default function Project(props)
     }
 
     useEffect(() => {
-        if (project !== props.data) setProject(props.data)
-        // If the component already has data, then there's no point in loading the project ID from database.
-        if (props.data || project) return
+        // If the component already has data, then there's no point in loading the project ID from the database.
+        if (props.data && project !== props.data) return setProject(props.data)
 
         axios.get(`http://localhost:3001/api/project${window.location.search}`)
             .then((response) => {
@@ -83,7 +82,7 @@ export default function Project(props)
                     setErrorMsg('Something went wrong, please try again!')
                 setIsLoading(false)
             })
-    }, [props.data])
+    }, [props.data, project])
 
     if (isLoading)
     {
