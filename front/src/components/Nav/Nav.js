@@ -26,7 +26,7 @@ export default function Nav() {
         <div id='nav-container'>
             <div id='site-header'>
                 <a href='/' aria-label='Home page'>
-                    <img src={ logo } id='site-logo'/>
+                    <img src={ logo } alt='Logo' id='site-logo'/>
                     <p id='site-title'>Projects4Devs</p>
                 </a>
             </div>

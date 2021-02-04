@@ -24,15 +24,14 @@ export default function Project(props)
     function getDifficulty()
     {
         const difficulty = project.difficulty[0]
-        console.log(difficulty)
         const images = []
 
         for (let i = 0; i < 5; i++)
         {
             if (i < difficulty)
-                images.push(<img src={ coffeeImg } className='difficulty-icon'/>)
+                images.push(<img src={ coffeeImg } alt='Coffee difficulty icon' className='difficulty-icon'/>)
             else
-                images.push(<img src={ emptyCupImg } className='difficulty-icon'/>)
+                images.push(<img src={ emptyCupImg } alt='Empty cup difficulty icon' className='difficulty-icon'/>)
         }
 
         return (

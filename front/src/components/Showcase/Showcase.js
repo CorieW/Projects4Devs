@@ -10,7 +10,7 @@ export default function Showcase()
     const [errorMsg, setErrorMsg] = useState(undefined)
 
     // Makes an API call to the backend, asking for some random projects to display to the user.
-    function RequestProjects()
+    function requestProjects()
     {
         axios.get(`http://localhost:3001/api/random-projects?numOfProjects=10`)
             .then((response) => {
@@ -43,8 +43,8 @@ export default function Showcase()
         // Don't load more projects until the 2nd last project is being shown.
         if(projectIndice < projects.length - 2) return
 
-        RequestProjects()
-    }, [projectIndice, projects])
+        requestProjects()
+    }, [projectIndice, projects, requestProjects])
 
     function getPreviousBtn()
     {

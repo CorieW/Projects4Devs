@@ -12,8 +12,6 @@ import Page404 from './components/Page404/Page404'
 import Project from './components/Project/Project'
 
 function App() {
-  const [project, setProject] = useState(undefined)
-
   return (
     <div className='app'>
       <Nav />
