@@ -71,9 +71,11 @@ export default function Project(props)
 
         axios.get(`${window.location.origin}/api/project${window.location.search}`)
             .then((response) => {
+                console.log(response)
                 setProject(response.data.data)
                 setIsLoading(false)
             }, (error) => {
+                console.log(error)
                 if (error.response.data.message !== undefined)
                     setErrorMsg(error.response.data.message)
                 else if (error.message === 'Network Error')
