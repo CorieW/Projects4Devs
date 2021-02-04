@@ -10,7 +10,7 @@ export default function Showcase()
     const [errorMsg, setErrorMsg] = useState(undefined)
 
     // Makes an API call to the backend, asking for some random projects to display to the user.
-    const requestProjects = () => {
+    const requestProjects = useCallback(() => {
         axios.get(`http://localhost:3001/api/random-projects?numOfProjects=10`)
             .then((response) => {
                 setProjects([...projects, ...response.data.data])
@@ -22,7 +22,7 @@ export default function Showcase()
                 else
                     setErrorMsg('Something went wrong, please try again!')
             })
-    }
+    })
 
     function getLeftArrow()
     {
