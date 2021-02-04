@@ -61,7 +61,7 @@ export default function TrackProject()
     useEffect(() =>
     {
         // Makes an API call to the backend, asking for the data of the project with the given project ID.
-        axios.get(`http://localhost:3001/api/track${window.location.search}`)
+        axios.get(`${window.location.origin}/api/track${window.location.search}`)
             .then((response) => {
                 setProgressStatus(response.data.data.progress)
             }, (error) => {

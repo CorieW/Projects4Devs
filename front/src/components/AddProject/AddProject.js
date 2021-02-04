@@ -22,7 +22,7 @@ export default function AddProject()
 
         axios({
             method: 'POST',
-            url: 'http://localhost:3001/api/add',
+            url: `${window.location.origin}/api/add`,
             data: data,
         }).then((response) => {
             window.location.replace('/track?id=' + response.data.projectID)

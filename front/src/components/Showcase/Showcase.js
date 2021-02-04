@@ -11,7 +11,7 @@ export default function Showcase()
 
     // Makes an API call to the backend, asking for some random projects to display to the user.
     const requestProjects = useCallback(() => {
-        axios.get(`http://localhost:3001/api/random-projects?numOfProjects=10`)
+        axios.get(`${window.location.origin}/api/random-projects?numOfProjects=10`)
             .then((response) => {
                 setProjects([...projects, ...response.data.data])
             }, (error) => {

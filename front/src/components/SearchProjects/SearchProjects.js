@@ -11,7 +11,7 @@ export default function SearchProjects()
 
     useEffect(() =>
     {
-        axios.get(`http://localhost:3001/api/projects${window.location.search}`)
+        axios.get(`${window.location.origin}/api/projects${window.location.search}`)
             .then((response) => {
                 setProjects(response.data.data)
                 setIsLoading(false)

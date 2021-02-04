@@ -69,7 +69,7 @@ export default function Project(props)
         // If the component already has data, then there's no point in loading the project ID from the database.
         if (props.data && project !== props.data) return setProject(props.data)
 
-        axios.get(`http://localhost:3001/api/project${window.location.search}`)
+        axios.get(`${window.location.origin}/api/project${window.location.search}`)
             .then((response) => {
                 setProject(response.data.data)
                 setIsLoading(false)
