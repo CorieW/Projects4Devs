@@ -11,15 +11,15 @@ export default function SearchProjects()
 
     useEffect(() =>
     {
-        axios.get(`${window.location.origin}/api/projects${window.location.search}`)
+        axios.get(`${process.env.REACT_APP_API_ORIGIN}/api/projects${window.location.search}`)
             .then((response) => {
                 setProjects(response.data.data)
                 setIsLoading(false)
             }, (error) => {
-                if (error.response.data.message !== undefined)
-                    setErrorMsg(error.response.data.message)
-                else if (error.message === 'Network Error')
+                if (error.message === 'Network Error')
                     setErrorMsg('Our servers are currently busy or down, please try again later!')
+                else if (error.response.data.message !== undefined)
+                    setErrorMsg(error.response.data.message)
                 else
                     setErrorMsg('Something went wrong, please try again!')
                 setIsLoading(false)

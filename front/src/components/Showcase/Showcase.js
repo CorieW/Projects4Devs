@@ -11,14 +11,14 @@ export default function Showcase()
 
     // Makes an API call to the backend, asking for some random projects to display to the user.
     const requestProjects = useCallback(() => {
-        axios.get(`${window.location.origin}/api/random-projects?numOfProjects=10`)
+        axios.get(`${process.env.REACT_APP_API_ORIGIN}/api/random-projects?numOfProjects=10`)
             .then((response) => {
                 setProjects([...projects, ...response.data.data])
             }, (error) => {
-                if (error.response.data.message !== undefined)
-                    setErrorMsg(error.response.data.message)
-                else if (error.message === 'Network Error')
+                if (error.message === 'Network Error')
                     setErrorMsg('Our servers are currently busy or down, please try again later!')
+                else if (error.response.data.message !== undefined)
+                    setErrorMsg(error.response.data.message)
                 else
                     setErrorMsg('Something went wrong, please try again!')
             })

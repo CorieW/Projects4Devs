@@ -61,14 +61,14 @@ export default function TrackProject()
     useEffect(() =>
     {
         // Makes an API call to the backend, asking for the data of the project with the given project ID.
-        axios.get(`${window.location.origin}/api/track${window.location.search}`)
+        axios.get(`${process.env.REACT_APP_API_ORIGIN}/api/track${window.location.search}`)
             .then((response) => {
                 setProgressStatus(response.data.data.progress)
             }, (error) => {
-                if (error.response.data.message !== undefined)
-                    setErrorMsg(error.response.data.message)
-                else if (error.message === 'Network Error')
+                if (error.message === 'Network Error')
                     setErrorMsg('Our servers are currently busy or down, please try again later!')
+                else if (error.response.data.message !== undefined)
+                    setErrorMsg(error.response.data.message)
                 else
                     setErrorMsg('Something went wrong, please try again!')
             })

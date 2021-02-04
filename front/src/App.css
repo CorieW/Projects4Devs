@@ -6,8 +6,8 @@
   max-width: 900px;
   width: 60%;
   /* The screen height subtracted by the height and margin of the nav and footer together. */
-  min-height: calc(100vh - 130px);
-  margin: 20px auto;
+  min-height: calc(100vh - 190px);
+  margin: 50px auto;
   box-sizing: border-box;
 }
 
