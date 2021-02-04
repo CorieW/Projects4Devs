@@ -71,6 +71,7 @@ export default function Project(props)
 
         axios.get(`${process.env.REACT_APP_API_ORIGIN}/api/project${window.location.search}`)
             .then((response) => {
+                console.log(response)
                 setProject(response.data.data)
                 setIsLoading(false)
             }, (error) => {
