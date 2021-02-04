@@ -74,7 +74,6 @@ export default function Project(props)
                 setProject(response.data.data)
                 setIsLoading(false)
             }, (error) => {
-                console.log("error")
                 if (error.response.data.message !== undefined)
                     setErrorMsg(error.response.data.message)
                 else if (error.message === 'Network Error')
@@ -82,7 +81,6 @@ export default function Project(props)
                 else
                     setErrorMsg('Something went wrong, please try again!')
                 setIsLoading(false)
-                console.log(errorMsg)
             })
     }, [props.data, project])
 
