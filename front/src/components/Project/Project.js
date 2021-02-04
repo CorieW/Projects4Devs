@@ -75,9 +75,8 @@ export default function Project(props)
                 setIsLoading(false)
             }, (error) => {
                 console.log("error")
-                if (error.response.data.message !== undefined) {
+                if (error.response.data.message !== undefined)
                     setErrorMsg(error.response.data.message)
-                }
                 else if (error.message === 'Network Error')
                     setErrorMsg('Our servers are currently busy or down, please try again later!')
                 else
