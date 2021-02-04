@@ -43,7 +43,7 @@ export default function Showcase()
         if(projectIndice < projects.length - 2) return
 
         requestProjects()
-    }, [projectIndice, projects])
+    }, [projectIndice, projects, requestProjects])
 
     function getPreviousBtn()
     {
