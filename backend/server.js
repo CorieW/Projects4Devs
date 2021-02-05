@@ -22,4 +22,6 @@ app.use('/api/projects', require('./api/getProjects'))
 app.use('/api/random-projects', require('./api/getRandomProjects'))
 app.use('/api/track', require('./api/getProjectProgress'))
 
-app.listen(port)
+app.listen(port, () => {
+    console.log('Server has started...')
+})

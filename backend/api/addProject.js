@@ -23,10 +23,19 @@ router.post('/', (req, res) => {
         return res.status(400).send({message: 'A project may have a max of 10 tags.'})
 
     let projectName = req.body.projectName
+    // The below line will replace all of the apostrophes with double apostrophes to avoid MySQL syntax errors.
+    projectName = projectName.replace(/'/g, `''`)
     let shortDesc = req.body.shortDesc
+    shortDesc = shortDesc.replace(/'/g, `''`)
     let desc = req.body.desc
+    desc = desc.replace(/'/g, `''`)
+    console.log(desc)
     let difficulty = req.body.difficulty
+    difficulty = difficulty.replace(/'/g, `''`)
     let tags = req.body.tags ? req.body.tags : []
+    tags.forEach(tag => {
+        tag = tag.replace(/'/g, `''`)
+    })
 
     addProject({ projectName, shortDesc, desc, difficulty, tags }, (statusCode, data) => {
         res.status(statusCode).send(data)

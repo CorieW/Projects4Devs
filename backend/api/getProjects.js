@@ -5,6 +5,8 @@ const mysqlConnection = require('../config/database.js')
 
 router.get('/', (req, res) => {
     let searchQuery = req.query.searchQuery ? req.query.searchQuery : ''
+    // The below line will replace all of the apostrophes with double apostrophes to avoid MySQL syntax errors.
+    searchQuery = searchQuery.replace(/'/g, `''`)
 
     // *Note: Min of 1 project and a max of 10 projects.
     let page = req.query.page ? req.query.page : 0
@@ -25,6 +27,7 @@ function getProjects(searchQuery, page, numOfProjects, callback)
     const query = `SELECT * FROM projects WHERE (project_name LIKE '%${searchQuery}%') AND (progress = 'Accepted') LIMIT ${numOfProjects} OFFSET ${page * numOfProjects}`
 
     mysqlConnection.query(query, (err, rows) => {
+        console.log(err)
         if (err) return callback(500, {message: 'Something went wrong, please try again!'})
         if (rows.length == 0) return callback(404, {message: 'No project ideas found.'})
 
